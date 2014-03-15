@@ -7,11 +7,11 @@ class Claim < ActiveRecord::Base
   before_save :set_amount, :set_code
 
   def set_amount
-    # to be overriden
+    raise NotImplementedError, 'Must be implemented in subclass'
   end
 
   def set_code
-    # to be overriden
+    raise NotImplementedError, 'Must be implemented in subclass'
   end
 
   def check_eligiblity
